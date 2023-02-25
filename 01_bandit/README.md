@@ -69,6 +69,7 @@ The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
 ```
 $ cat data.txt | xxd -r | file - ; cat data.txt | xxd -r | gunzip - | file - ; # and so on ...
 /dev/stdin: gzip compressed data, was "data2.bin", last modified: Tue Feb 21 22:02:52 2023, max compression, from Unix
+/dev/stdin: bzip2 compressed data, block size = 900k
 $ cat data.txt | xxd -r | gunzip - | bzip2 -d | gunzip - | tar -xf- -O | tar -xf- -O | bzip2 -d | tar -xf- -O | gunzip -
 The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
 ```
