@@ -117,4 +117,15 @@ $ ll bandit20-do ; ./bandit20-do cat /etc/bandit_pass/bandit20
 -rwsr-x--- 1 bandit20 bandit19 14876 Feb 21 22:03 bandit20-do*
 VxCazJaVykI6W36BkBU0mJTCM8rR95XT
 ```
-20. **bandit20 -> bandit21**
+20. **bandit20 -> bandit21** 
+```
+$ cat /etc/bandit_pass/bandit20 | nc -l localhost 12345 & sleep 1; ./suconnect 12345
+[1] 1444220
+Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+Password matches, sending next password
+NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+```
+21. **bandit21 -> bandit22**
+```
+```
+22. 
