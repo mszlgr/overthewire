@@ -134,9 +134,23 @@ cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 $ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
 ```
-22. **bandit22 -> bandit23**
+22. **bandit22 -> bandit23** Inspect cron and assume it is run by bandit23
+```
+$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+$ cat /tmp/$(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)
+QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+```
+23. **bandit23 -> bandit24**
 ```
 
 ```
-23. 
 24. 
+25. 
